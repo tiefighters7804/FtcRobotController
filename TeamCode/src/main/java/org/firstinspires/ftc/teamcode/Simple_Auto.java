@@ -46,13 +46,13 @@ public class Simple_Auto extends OpMode {
         rf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         lr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        lf.setPower(0.75);
-        rf.setPower(0.75);
-        lr.setPower(0.75);
-        rr.setPower(0.75);
-        while (lf.isBusy() && rf.isBusy() && lr.isBusy() && rr.isBusy())
+        lf.setPower(0.25);
+        rf.setPower(0.25);
+        lr.setPower(0.25);
+        rr.setPower(0.25);
+        while (lf.isBusy() && rf.isBusy() && lr.isBusy() && rr.isBusy()) //Waits until the move is completed
         {
-
+            //Keep Empty
         }
 
         //strafe
