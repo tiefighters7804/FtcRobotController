@@ -50,10 +50,11 @@ public class Simple_Auto extends OpMode {
         rf.setPower(0.75);
         lr.setPower(0.75);
         rr.setPower(0.75);
-        if(!lf.isBusy() || !rf.isBusy() || !lr.isBusy() || !rr.isBusy())
+        while (lf.isBusy() && rf.isBusy() && lr.isBusy() && rr.isBusy())
         {
 
         }
+
         //strafe
         lf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -67,11 +68,32 @@ public class Simple_Auto extends OpMode {
         rf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         lr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        lf.setPower(0.5);
-        rf.setPower(0.5);
-        lr.setPower(0.5);
-        rr.setPower(0.5);
-        if(!lf.isBusy() || !rf.isBusy() || !lr.isBusy() || !rr.isBusy())
+        lf.setPower(0.25);
+        rf.setPower(0.25);
+        lr.setPower(0.25);
+        rr.setPower(0.25);
+        while (lf.isBusy() && rf.isBusy() && lr.isBusy() && rr.isBusy())
+        {
+
+        }
+        //strafe
+        lf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        lr.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rr.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        lf.setTargetPosition(-1000);
+        rf.setTargetPosition(-1000);
+        lr.setTargetPosition(-1000);
+        rr.setTargetPosition(-1000);
+        lf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        lr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        lf.setPower(0.25);
+        rf.setPower(0.25);
+        lr.setPower(0.25);
+        rr.setPower(0.25);
+        while (lf.isBusy() && rf.isBusy() && lr.isBusy() && rr.isBusy())
         {
 
         }

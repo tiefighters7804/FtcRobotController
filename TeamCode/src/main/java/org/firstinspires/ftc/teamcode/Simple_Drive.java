@@ -28,9 +28,9 @@ public class Simple_Drive extends OpMode {
 
     @Override
     public void loop() {
-        V = -gamepad1.left_stick_y;
-        H = -gamepad1.left_stick_x;
-        P = -gamepad1.right_stick_x;
+        V = gamepad1.left_stick_y;
+        H = gamepad1.left_stick_x;
+        P = - gamepad1.right_stick_x;
         lf.setPower(P + V - H);
         rf.setPower(-P + (V + H));
         lr.setPower(P + (V + H));
