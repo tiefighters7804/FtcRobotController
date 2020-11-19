@@ -58,7 +58,7 @@ public class MyOdometryOpmode extends LinearOpMode {
         globalPositionUpdate.stop();
 
     }
-
+    
     private void initDriveHardwareMap(String rfName, String rbName, String lfName, String lbName, String vlEncoderName, String vrEncoderName, String hEncoderName){
         right_front = hardwareMap.dcMotor.get(rfName);
         right_back = hardwareMap.dcMotor.get(rbName);
