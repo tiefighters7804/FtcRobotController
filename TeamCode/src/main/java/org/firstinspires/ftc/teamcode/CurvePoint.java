@@ -24,8 +24,8 @@ public class CurvePoint {
     }
     public CurvePoint(CurvePoint thisPoint)
     {
-        x = thisPoint.x;
-        y = thisPoint.y;
+        double X = thisPoint.x;
+        double Y = thisPoint.y;
         moveSpeed = thisPoint.moveSpeed;
         turnSpeed = thisPoint.turnSpeed;
         followDistance = thisPoint.followDistance;
@@ -44,3 +44,4 @@ public class CurvePoint {
         y = point.y;
     }
 }
+ 

@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import android.graphics.Point;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import static java.lang.StrictMath.pow;
@@ -12,19 +13,17 @@ public class MathFunctions {
      * @param angle
      * @return
      */
-    public static double AngleWrap(double angle)
-    {
-        while(angle < -Math.PI)
-        {
-            angle += 2 *Math.PI;
+    public static Serializable AngleWrap(double angle) {
+        while (angle < -Math.PI) {
+            angle += 2 * Math.PI;
         }
-        while(angle > Math.PI)
-        {
-            angle += 2 *Math.PI;
+        while (angle > Math.PI) {
+            angle += 2 * Math.PI;
         }
         return angle;
+    }
 
-        public static ArrayList<Point> lineCircleIntersection (Point circleCenter, double radius, Point linePoint1, Point linePoint2)
+        public static ArrayList<Point> lineCircleIntersection(Point circleCenter, double radius, Point linePoint1, Point linePoint2)
         {
             if (Math.abs(linePoint1.y -linePoint2.y) < 0.003)
             {
@@ -43,7 +42,7 @@ public class MathFunctions {
             double y1 = linePoint1.y - circleCenter.y;
 
             double quadratricB = (2.0 * m1 * y1) - (2.0 * pow(m1,2) * x1);
-            double quadratricC = ((pow(m1,2) * pow(x1,2) - (2.0*y1*m1*x1) + pow(y1,2) - pow(radius,2));
+            double quadratricC = ((pow(m1,2) * pow(x1,2) - (2.0*y1*m1*x1) + pow(y1,2) - pow(radius,2)));
 
             ArrayList<Point> allPoints = new ArrayList<>();
 
@@ -57,7 +56,7 @@ public class MathFunctions {
                 double minX = linePoint1.x < linePoint1.x ? linePoint1.x : linePoint2.x;
                 double maxX = linePoint1.x > linePoint1.x ? linePoint1.x : linePoint2.x;
 
-                if(xRoot1 > minX && xRoot2 < maxX)
+                if(xRoot1 > minX && xRoot1 < maxX)
                 {
                     allPoints.add(new Point(xRoot1,yRoot1));
                 }
@@ -77,4 +76,3 @@ public class MathFunctions {
             return allPoints;
         }
     }
-}
