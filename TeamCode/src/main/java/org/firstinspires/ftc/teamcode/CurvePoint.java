@@ -1,6 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
-import android.graphics.Point;
+import org.firstinspires.ftc.teamcode.RobotUtilities.Point;
 
 public class CurvePoint {
     public double x;
@@ -9,39 +9,38 @@ public class CurvePoint {
     public double turnSpeed;
     public double followDistance;
     public double pointLength;
-    public double slowDownTurnRadius;
+    public double slowDownTurnRadians;
     public double slowDownTurnAmount;
 
-    public CurvePoint(double x, double y, double moveSpeed, double turnSpeed, double followDistance, double slowDownTurnRadius, double slowDownTurnAmount)
-    {
+
+    public CurvePoint (double x, double y, double moveSpeed, double turnSpeed, double followDistance, double slowDownTurnRadians,
+                       double slowDownTurnAmount) {
         this.x = x;
         this.y = y;
         this.moveSpeed = moveSpeed;
         this.turnSpeed = turnSpeed;
         this.followDistance = followDistance;
-        this.slowDownTurnRadius = slowDownTurnRadius;
+        this.slowDownTurnRadians = slowDownTurnRadians;
         this.slowDownTurnAmount = slowDownTurnAmount;
     }
-    public CurvePoint(CurvePoint thisPoint)
-    {
-        double X = thisPoint.x;
-        double Y = thisPoint.y;
+
+    public CurvePoint(CurvePoint thisPoint) {
+        x = thisPoint.x;
+        y = thisPoint.y;
         moveSpeed = thisPoint.moveSpeed;
         turnSpeed = thisPoint.turnSpeed;
         followDistance = thisPoint.followDistance;
-        slowDownTurnRadius = thisPoint.slowDownTurnRadius;
+        slowDownTurnRadians = thisPoint.slowDownTurnRadians;
         slowDownTurnAmount = thisPoint.slowDownTurnAmount;
         pointLength = thisPoint.pointLength;
     }
 
-    public Point toPoint()
-    {
-        return new Point(x, y);
+    public Point toPoint () {
+        return new Point (x, y);
     }
 
-    public void setPoint(Point thisIntersection) {
+    public void setPoint (Point point) {
         x = point.x;
         y = point.y;
     }
 }
- 

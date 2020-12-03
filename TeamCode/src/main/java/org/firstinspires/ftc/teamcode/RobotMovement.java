@@ -1,16 +1,16 @@
 package org.firstinspires.ftc.teamcode;
 
-import android.graphics.Point;
-
 import com.qualcomm.robotcore.util.Range;
 
 import java.util.ArrayList;
 import static Odometry.OdometryGlobalCoordinatePosition.robotGlobalXCoordinatePosition;
 import static Odometry.OdometryGlobalCoordinatePosition.robotGlobalYCoordinatePosition;
 import static Odometry.OdometryGlobalCoordinatePosition.robotOrientationRadians;
-import static Odometry.OdometryGlobalCoordinatePosition.
+import static org.firstinspires.ftc.teamcode.RobotUtilities.MovementVars.movement_x;
+import static org.firstinspires.ftc.teamcode.RobotUtilities.MovementVars.movement_y;
+import static org.firstinspires.ftc.teamcode.RobotUtilities.MovementVars.movement_turn;
+import org.firstinspires.ftc.teamcode.RobotUtilities.Point;
 import static org.firstinspires.ftc.teamcode.MathFunctions.lineCircleIntersection;
-import static
 
 public class RobotMovement {
 
@@ -31,8 +31,8 @@ public class RobotMovement {
             double closestAngle = 10000000;
             for (Point thisIntersection : intersections)
             {
-                double angle = Math.atan2(thisIntersection.y - robotGlobalYCoordinatePosition - robotGlobalXCoordinatePosition);
-                double deltaAngle = Math.abs(MathFunctions.AngleWrap(angle - robotOrientationRadians));
+                double angle = Math.atan2(thisIntersection.y - robotGlobalYCoordinatePosition, thisIntersection.x - robotGlobalXCoordinatePosition);
+                double deltaAngle = Math.abs((Double) MathFunctions.AngleWrap(angle - robotOrientationRadians));
 
                 if (deltaAngle < closestAngle)
                 {
@@ -61,7 +61,7 @@ public class RobotMovement {
         double relativeYToPoint = Math.sin(relativeAngleToPoint) * distanceToTarget;
 
         double movementXPower = relativeXToPoint / (Math.abs(relativeXToPoint) + Math.abs(relativeYToPoint));
-        double movementYPower = relativeYToPoint / (Math.abs(relativeXToPoint) + Math.abs(relativeYToPoint));\
+        double movementYPower = relativeYToPoint / (Math.abs(relativeXToPoint) + Math.abs(relativeYToPoint));
 
          movement_x = movementXPower * movementSpeed;
          movement_y = movementYPower * movementSpeed;

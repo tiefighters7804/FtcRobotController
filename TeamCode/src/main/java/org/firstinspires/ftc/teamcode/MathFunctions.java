@@ -1,10 +1,8 @@
 package org.firstinspires.ftc.teamcode;
 
-import android.graphics.Point;
-
 import java.io.Serializable;
 import java.util.ArrayList;
-
+import org.firstinspires.ftc.teamcode.RobotUtilities.Point;
 import static java.lang.StrictMath.pow;
 import static java.lang.StrictMath.sqrt;
 
@@ -34,7 +32,7 @@ public class MathFunctions {
                 linePoint1.x = linePoint2.x + 0.003;
             }
 
-            double m1 = (linePoint2.y - linePoint1.y) / (linePoint2.x - linePoint1.y);
+            double m1 = (linePoint2.y - linePoint1.y) / (linePoint2.x - linePoint1.x);
 
             double quadraticA = 1.0 + pow(m1,2);
 
